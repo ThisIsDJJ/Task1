@@ -30,7 +30,7 @@ public class MyThread1 extends Thread {
 		}
 		Long begin = new Date().getTime();
 //		 String prefix = "INSERT INTO entry_form (name,qq,profession) VALUES ";
-		String prefix = "INSERT INTO student1(name,type,time,school,online_id,wish,rec_senior,create_at,update_at) VALUES";
+		String prefix = "INSERT INTO student1_copy(name,type,time,school,online_id,wish,rec_senior,create_at,update_at) VALUES";
 		try {
 			StringBuffer suffix = new StringBuffer();
 			conn.setAutoCommit(false);

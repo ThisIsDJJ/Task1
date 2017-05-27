@@ -1,5 +1,4 @@
 package com.dj.service.impl;
-import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,8 +27,9 @@ public class StudentServiceImpl implements StudentService {
     }
     
     public boolean update(Student student){
+    	student.setUpdateAt(System.currentTimeMillis());
     	boolean bl = springStudentDao.update(student);
-    	logger.info(" 原来如此哦  传入的是创造对象的那个类 ---nonono不影响  StudentServiceImpl update");
+    	logger.info("");
     	return bl;
     	
     }
@@ -38,17 +38,13 @@ public class StudentServiceImpl implements StudentService {
     	logger.info("StudentServiceImpl delete");
 		return bl;    	
     }
-    public List<Student> selectAll(){
-    	springStudentDao.selectAll();
-    	logger.info("StudentServiceImpl selectAll");
-		return null;
-	}
+
     public int countAll() {
     	springStudentDao.countAll();
     	logger.info("StudentServiceImpl countAll");
 		return springStudentDao.countAll();
 	}
-    public Student  findByStudentId(long id) {
+    public Student  findByStudentId(long id) throws NoNumberException{
     	Student student = springStudentDao.findByStudentId(id);
     	logger.info("StudentServiceImpl findByStudentId");
     	if(student != null){

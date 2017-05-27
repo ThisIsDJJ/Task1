@@ -13,11 +13,10 @@ import com.dj.domain.Student;
 // 告诉junit spring配置文件
 @ContextConfiguration({"classpath:springDao.xml"})
 public class SpringStudentTest {
-	private static Logger logger = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger(SpringStudentTest.class);
 	@Autowired
 	private SpringStudentDao springstudentDao ;
 	@Test
-
 	public void insertTest(){
 		Student student = new Student(1,"zhizhong","java",20170516,"武大",111,"11111","111",111,111);
 		long insert =  springstudentDao.insert(student);
@@ -42,10 +41,6 @@ public class SpringStudentTest {
 		logger.debug(springstudentDao.delete(1));
 		
 	}
-	@Test
-	public void selectAll(){
-		logger.debug(springstudentDao.selectAll());
-	}
-	
+
 }
 

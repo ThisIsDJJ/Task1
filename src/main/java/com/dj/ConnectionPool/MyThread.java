@@ -58,7 +58,7 @@ public class MyThread extends Thread{
         for (int i = 1; i <= 10; i++) {
             suffix = new StringBuffer();
             // 第j次提交步长
-            for (int j = 1; j <= 100000; j++) {
+            for (int j = 1; j <= 100; j++) {
                 // 构建SQL后缀
 //                suffix.append("('" +i*j+"','123456'"+ ",'java'"+"),");
             	suffix.append("('"+ "小黑'"+ ",'java'"

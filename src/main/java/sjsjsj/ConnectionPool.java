@@ -1,4 +1,4 @@
-package com.dj.ConnectionPool;
+package sjsjsj;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,10 +33,7 @@ public class ConnectionPool {
 					ls.add(c);
 				
 			}
-		} catch (ClassNotFoundException e) {
-			
-			e.printStackTrace();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
@@ -46,7 +43,7 @@ public class ConnectionPool {
 		while(ls.isEmpty()){
 			try {
 				this.wait();
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

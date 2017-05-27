@@ -1,11 +1,6 @@
 package com.dj.dao.spring;
-
-import java.util.List;
-
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -22,9 +17,7 @@ public interface SpringStudentDao {
     
     @Delete("delete from student1 where id=#{id}")
     public boolean delete(long id);
-    
-    @Select("select * from student1 order by id asc")
-    public List<Student> selectAll();
+
     
     @Select("select count(*) c from student1;")
     public int countAll();
@@ -35,4 +28,3 @@ public interface SpringStudentDao {
     
 
 }
-
