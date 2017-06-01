@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djj.task1.mybatis.mapper.UserMapper">
+   
+    <insert id="insertStudent" useGeneratedKeys="true" keyProperty="id">
+        insert into student1 (id,name,type,time,school,online_id,wish,rec_senior,create_at,update_at) values (#{id},#{name},#{type},#{time},#{school},#{online_id},#{wish},#{rec_senior},#{create_at},#{update_at})
+    </insert> 
+    
+    <update id="updateStudent" >
+      update student1 set name=#{name},type=#{type},time=#{time},school=#{school},online_id=#{online_id},wish=#{wish},rec_senior=#{rec_senior},create_at=#{create_at},update_at=#{update_at}where id=#{id}
+    </update>
+    <delete id="deleteStudent" parameterType="int">
+     delete from student1 where id=#{id}  
+    </delete>   
+    <select id="selectStudentById" parameterType="int" resultMap="userMap">
+     select * from student1 where id=#{id}
+    </select>   
+    <select id="selectAllStudent" resultMap="userMap">
+     select * from student1
+    </select>
+    <resultMap id="userMap" type="com.djj.task1.student.Student">
+        <id property="id" column="id" javaType="java.lang.Integer"></id>
+        <result property="username" column="username" javaType="java.lang.String"></result>
+        <result property="password" column="password" javaType="java.lang.String"></result>
+        <result property="account" column="account" javaType="java.lang.Double"></result>
+    </resultMap>
+</mapper>
