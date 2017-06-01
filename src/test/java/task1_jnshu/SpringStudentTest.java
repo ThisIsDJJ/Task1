@@ -18,7 +18,7 @@ public class SpringStudentTest {
 	private SpringStudentDao springstudentDao ;
 	@Test
 	public void insertTest(){
-		Student student = new Student(1,"zhizhong","java",20170516,"武大",111,"11111","111",111,111);
+		Student student = new Student();
 		long insert =  springstudentDao.insert(student);
 		logger.error("SpringStudentTest debug insertTest"+"insert="+insert);
 	}

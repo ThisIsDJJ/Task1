@@ -29,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
     public boolean update(Student student){
     	student.setUpdateAt(System.currentTimeMillis());
     	boolean bl = springStudentDao.update(student);
-    	logger.info("");
+    	logger.info("springStudentDao.update(student)");
     	return bl;
     	
     }

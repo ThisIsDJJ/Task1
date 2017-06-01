@@ -1,7 +1,5 @@
 package task1_jnshu;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dj.domain.Student;
-import com.dj.service.StudentService;
+
 import com.dj.service.impl.StudentServiceImpl;
 
 import Exception.NoNumberException;
@@ -24,20 +22,20 @@ public class SpringStudentServiceTest {
 	private StudentServiceImpl studentServiceImpl;
 	@Test
 	public void insertTest(){
-		Student student = new Student(1,"小红","java",20170516,"华师",111,"11111","111",111,111);
+		Student student = new Student();
 		System.out.println(student);
 		studentServiceImpl.insert(student);
 
 	}
 	@Test
 	public void UpdateTest(){	
-		Student student = new Student(1,"小黑","java",20170516,"华师",111,"11111","111",111,111);
+		Student student = new Student();
 		studentServiceImpl.update(student);
 	}
 	@Test
 	public void deleteTest(){
 		long id = 3;
-		boolean b=studentServiceImpl.delete(id);
+		studentServiceImpl.delete(id);
 	
 	}
 	@Test

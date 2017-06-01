@@ -23,7 +23,7 @@ public class Test111 {
 	}
 	@Test
 	public void insertStudent(){
-	Student student = new Student(1,"小白","java",20170516,"hust",111,"11111","111",111,111);
+	Student student = new Student(1,"小黄","java",20170516,"hust",111,"11111","111",111);
 	for(int i = 0;i<=100;i++){
 		springstudentDao.insert(student);
 		}
